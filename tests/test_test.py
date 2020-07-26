@@ -1,4 +1,4 @@
-from qtest.test import F
+from quiq import F
 
 def test_test():
     T = (F(1,4) == 2)

@@ -7,8 +7,8 @@ class ExceptionWrapper:
         self.err_type = err_type
     def __repr__(self):
         return repr(self.err_type)[8:-2]
-        
-class Test():    
+
+class Test():
     """The basic unit for a test. It holds:
     - The function thats being tested
     - Arguments used to call the function
@@ -20,7 +20,7 @@ class Test():
         self.args     = list(args)  # Args to evaluate the function with
         self.operator = None        # How we expect to interpret the value of the function
         self.expected = None        # What we expect to happen when the function is called
-    
+
     def __repr__(self):
         res =  f"{self.function}("
         res += ', '.join([str(a) for a in self.args])
@@ -28,10 +28,10 @@ class Test():
         res += f" {self.operator}"
         res += f" {self.expected}"
         return res
-    
+
     """ ----------------------------------------------------------------------
     OPERATORS
-    -----------------------------------------------------------------------""" 
+    -----------------------------------------------------------------------"""
     def __eq__(self, expected): self.operator, self.expected = '==', expected; return self
     def __ne__(self, expected): self.operator, self.expected = '!=', expected; return self
     def __lt__(self, expected): self.operator, self.expected = '<',  expected; return self
@@ -42,8 +42,8 @@ class Test():
     def isin(self, other):
         self.operator, self.expected = 'isin', ['list', *other]
         return self
-    
-    def throws(self, err=None): 
+
+    def throws(self, err=None):
         self.operator = 'throws'
         self.expected = ExceptionWrapper(err) if err else ExceptionWrapper(Exception)
         return self

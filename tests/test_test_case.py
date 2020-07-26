@@ -1,4 +1,4 @@
-from qtest import TestCase, F
+from quiq import TestCase, F
 
 def test_test_case():
     @TestCase(

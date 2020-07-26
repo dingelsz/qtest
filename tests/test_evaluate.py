@@ -1,4 +1,4 @@
-from qtest.evaluate import evaluate
+from quiq.evaluate import evaluate
 
 def test_evaluate():
     assert evaluate(['car', ['list', 1, 2, 3]])     == 1, "Error with car/list"

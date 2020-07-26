@@ -1,6 +1,6 @@
 import logging
 
-from qtest.evaluate import evaluate, environment
+from quiq.evaluate import evaluate, environment
 
 class TestCase:
     """A Test case - it acts as the interface to the user and constructs and

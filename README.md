@@ -1,6 +1,6 @@
-# QTest
-QTest is a simpole and lightweight unit testing framework for for exploratory and
-prototyping coding. QTest allows unit tests to be written right before functions
+# quiq
+quiq is a simple and lightweight unit testing framework for for exploratory and
+prototyping coding. quiq allows unit tests to be written right before functions
 are declared in order to make a much more natural test/develop workflow in the
 spirit of TDD.
 

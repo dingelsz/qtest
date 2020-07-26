@@ -1,4 +1,4 @@
-from qtest.test import ExceptionWrapper
+from quiq.test import ExceptionWrapper
 
 # Types
 Symbol = str
@@ -12,7 +12,7 @@ environment = {
     'quote': 'quote',
     'car'  : lambda L    : L[0],
     'cdr'  : lambda L    : list(L[1:]),
-    
+
     # Operators
     'and' : lambda *args: reduce(lambda x, y: x and y, args),
     'or'  : lambda *args: reduce(lambda x, y: x or  y, args),
@@ -45,7 +45,7 @@ def evaluate(texp, env=environment):
         func = evaluate(texp[0], env)
         if func == 'quote': return texp[1]
         args = [evaluate(t, env) for t in texp[1:]]
-        
+
         # Try calling the function. Catch exception and return them for throw
         # to catch
         try:
